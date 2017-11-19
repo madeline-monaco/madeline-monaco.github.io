@@ -1,0 +1,10 @@
+body {
+    background:#c8deec;
+    font-family:"Helvetica Neue";
+}
+
+h1, h3, h4{font-family: "Courier New";}
+h2{font-family:"Century Gothic";}
+h3{color: #887;font-style: italic}
+a{font-weight:bold; color: #021a40; text-decoration: none}
+img { border:3px solid #021a40; width: 30%}
