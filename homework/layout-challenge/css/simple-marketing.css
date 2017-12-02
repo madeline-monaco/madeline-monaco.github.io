@@ -1,0 +1,52 @@
+header, footer {
+    height: 100px;
+}
+
+main1, section1, section2{
+    height:300px;
+}
+
+main1{
+    display: flex;
+}
+
+header{
+    background: black;
+}
+
+section1{
+    background: pink;
+    width: 50%;
+}
+
+section2{
+    background: hotpink;
+    width: 50%;
+}
+
+main2, section3, section4, aside2{
+    height:300px;
+}
+
+main2{
+    display: flex;
+}
+
+section3{
+    background: grey;
+    width: 30%;
+}
+
+section4{
+    background: darkgrey;
+    width: 40%;
+}
+
+aside2{
+    background: darkslategrey;
+    width: 30%;
+}
+
+footer{
+    background: black;
+}
