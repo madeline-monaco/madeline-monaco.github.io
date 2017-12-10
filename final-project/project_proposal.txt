@@ -1,0 +1,16 @@
+Final Project Proposal
+
+My first idea is to use the New York City API for farmers markets in the city to build a web app
+    that identifies where they are and when they're open. The layout would likely be simple, focusing
+    on the user inputing information and resulting in a map and text information.
+    https://data.cityofnewyork.us/Health/New-York-City-Farmers-Markets/j8gx-kc43
+
+My other idea relates directly to one of my current clients. By using the EPA's API, I'd like to 
+    create some kind of app that supplies users with information about nuclear power plants near 
+    them. I'll have to explore the API a bit further to understan what informtion can be provided, 
+    but it would likely be equally simple to the farmer's market idea, focusing on UX and churning
+    out data and information.
+    https://developer.epa.gov/epa-envirofacts-api/
+
+Lastly, I could do something that ties in a Twitter API to make some kind of live-streaming Twitter 
+    feed.

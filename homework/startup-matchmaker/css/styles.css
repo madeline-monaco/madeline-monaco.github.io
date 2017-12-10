@@ -1,0 +1,135 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif; 
+}
+
+header{
+    display: flex;
+    background: black;    
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: yellow solid 8px;
+}
+
+h1{
+    font-family: "Merriweather", serif;
+    color: yellow; 
+    padding: 10px;
+    margin: 5px;
+}
+
+.navbar li{
+    list-style: none;    
+    display: inline-block;
+    padding-right: 20px;
+ }
+ 
+ .navbar a{
+     font-family: "Oswald";
+     color: white;     
+     text-decoration: none;
+     font-size: 20px;     
+ }
+
+ .callout{
+    display: flex;
+    background-image: url("../img/coworking.jpg");
+    background-size: cover;
+    padding: 0px;
+    background-position: center;
+    justify-content: flex-end;
+    height: 70%;
+}
+
+ .callout div{
+    background: rgba(220,220,220, 0.8);
+    padding: 30 20;
+    margin: 50px;
+    width: 30%;
+    height: 60%;
+    border: rgba(180,180,180, 0.8) solid 3px;  
+    font-size: 20px;      
+    line-height: 30px;
+}
+
+.callout button{
+    width: 100%;    
+    padding: 10px 50px;
+    font-family: "Oswald";
+    font-size: 18px;
+    text-decoration: bold;
+    justify-content: center;
+    background: yellow;
+    color: black;
+    border-style: none;
+}
+
+h2, h3{
+    font-family: "Oswald";
+    color: black;
+    margin: 2px;
+}
+
+.taste{
+    text-decoration: line-through;
+    color: grey;
+}
+.are{
+    text-decoration: underline yellow;
+}
+
+.boxes{
+    display:flex;
+}
+
+.boxes button{
+    align-items: flex-end;
+    padding: 10px 50px;
+    font-family: "Oswald";
+    font-size: 18px;
+    justify-content: center;
+    white-space: nowrap;    
+    align-items: flex-end;
+}
+
+.box1, .box2, .box3 {
+    justify-content: wrap;
+    line-height: 30px;
+    margin: 20px;
+    padding: 25px;
+    width: 40%;
+    font-size: 18px;
+    justify-content: center;    
+}
+
+.verticalLine {
+    border-left: solid lightgray 2px;
+  }
+
+h4{
+    font-family: "Merriweather", serif;    
+    font-size: 25px;
+    font-style: bold;
+    margin: 0px;
+}
+
+.subtitle{
+    font-family: "Merriweather";
+    background: #C6C6C6;
+    padding: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+button{
+    font-family: "Oswald";
+    background: #C6C6C6;
+    border-radius: 10px;
+}
+
+footer{
+    background: black;
+    color: white;
+    height: 50px;
+    justify-content: center;
+    padding: 10px;
+}
