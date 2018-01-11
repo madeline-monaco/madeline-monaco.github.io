@@ -1,0 +1,73 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/basic.css">
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 50px 200px 100px 100px 75px; 
+      grid-template-areas: 
+      "h h h h h h h h h h h h"
+      "c c c c c c c c m m m m"
+      "l l l l l l r r r r r 2"
+      "z z z z y y y y z z z z"
+      "f f f f f f f f f f f f";
+    }
+
+    .header{
+      grid-column: 12;
+      grid-area: h;
+    }
+
+    .content{
+      grid-area: c;
+    }
+
+    .column--1{
+      grid-area: l;
+    }
+
+    .column--2{
+      grid-area: r;
+    }
+
+    .column--3{
+      grid-area: x;
+    }
+
+    .column--4{
+      grid-area: y;
+    }
+
+    .column--5{
+      grid-area: z;
+    }
+
+    .menu{
+      grid-area: m;
+    }
+
+    .footer{
+      grid-area: f;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">HEADER</div>
+    <div class="menu">MENU</div>
+    <div class="content">CONTENT</div>
+    <div class="column column--1">COLUMN</div>
+    <div class="column column--2">COLUMN</div>
+    <div class="column column--2">COLUMN</div>
+    <div class="column column--3">COLUMN</div>
+    <div class="column column--4">COLUMN</div>
+    <div class="column column--5">COLUMN</div>
+    <div class="footer">FOOTER</div>
+  </div>
+</body>
+
+</html>

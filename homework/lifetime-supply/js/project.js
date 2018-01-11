@@ -1,26 +1,26 @@
-// Store your current age into a variable
+$("#click-me").click(function(){
+    var age = $("#age").val();
+    var maxAge = $("#max-age").val();
+    var drink = $("#item").val();
+    var numPerDay = $("#num-per-day").val();
+    var total = (parseInt(maxAge) - parseInt(age)) * parseInt(numPerDay) * 365;
+    var drink = $("#drink").val();
 
-var age = $("#age").html();
+    $("#solution").html(total);
+    $("#drink").html(Drink);
 
-// Store a maximum age into a variable
+    console.log(total);
+     })
 
-var max-age = $("#max-age").html();
+// // Store your current age into a variable
 
-// Store a favorite drink (from a drop-down) into a variable
+// // Store a maximum age into a variable
 
-var drink = $("#item").val();
+// // Store a favorite drink (from a drop-down) into a variable
 
-// Store an amount per day into a variable
+// // Store an amount per day into a variable
 
-var amount = $("#num-per-day").html();
-
-// Calculate how much you would drink for the rest of your life!
-
-$("#click-me").html(function(){
-    var solution = $("#solution").html(); 
-    $("#solution").html(parseInt(("max-age") - ("age"))*amount);
- })
+// // Calculate how much you would drink for the rest of your life!
 
 // Output your results to the user
-
 
