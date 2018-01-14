@@ -1,11 +1,71 @@
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>To Market, To Market</title>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:700,400|Merriweather:700,700italic|Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+<header> 
+    <h1>To Market, To Market</h1>
+    <h4>Your guide to locating NYC farmers markets</h4>
+ </header>
+
+<container>
+
+<section class = "sectioninput">
     
+    <div class="input1">
+    <h2>Borough<span class=conj>OR </span> Zip Code: </h2>
+        <div class = "buttons">
+            <button>Manhattan</button>
+            <button>Brooklyn</button>
+            <button>Queens</button>
+            <button>Bronx</button>
+            <button>Staten Island</button>
+        </div>
+    </div>
+
+    <div class="input2">
+    <form>
+        <input type="text" name="zipcode" placeholder="Zip Code">
+    </form>
+    </div>
+
+    <div class="input3">
+    <form action="/action_page.php">
+        <h2>Date:</h2>
+        <input type="date" name="date">
+    </form>
+    <div class = "buttons"> <button>Submit </button> </div>
+    </div>
+</section>
+
+<div class="verticalline"></div>
+
+<section class="sectionresults">
+        
+    <div class="results1">
+    <h2>Open Markets:</h2>
+    <div class="map"> </div>
+    </div>
+   
+    <div class="results2">
+    <h2>Hours, Location, &amp; Info:</h2>
+    <div class="marketlist"> </div>
+
+    </div>
+</section>
+
+</container>
+
+<footer>
+    <p>Site by Madeline Monaco. General Assembly 2018.</p>
+</footer>
+
 </body>
+
 </html>

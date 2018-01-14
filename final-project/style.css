@@ -1,0 +1,148 @@
+/* Text & General */
+
+body{
+  font-family: 'Source Sans Pro', sans-serif; 
+  background: #f0f8ff;
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+  font-family: "Merriweather", serif;
+  color: white; 
+  background: mediumaquamarine;
+  text-align: center;
+  padding: 20 0 10 0;
+  margin: 5px;
+  border-bottom: #162129 solid 3px
+}
+
+h4 {
+  display: flex;
+  justify-content: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: italic;
+  font-size: 14px;
+  color: darkgrey; 
+  text-align: center;
+  margin: 5px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 24px;
+  color: #162129; 
+  text-align: left;
+  padding: 0 0 5 0;
+  margin: 5px;
+}
+
+.input3, .results2{
+  padding: 20 0 0 0;
+}
+
+.conj {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: italic;
+  color: darkgrey; 
+  text-align: center;
+  margin: 5px;
+}
+
+footer{
+  background: #162129;
+  color: white;
+  height: 50px;
+  justify-content: center;
+  padding: 10 10 10 30;
+}
+
+/* Flex Layout */
+
+container{
+  display: flex; 
+  justify-content: center;
+}
+
+.sectioninput, .sectionresults {
+  flex-direction: column;
+  background: rgba(220,220,220, 0.8);
+  font-size: 24px;
+  padding: 20 20 50;
+  margin: 50px;
+  width: 400px;
+  border: mediumaquamarine solid 3px;  
+  font-size: 20px;      
+  line-height: 30px;
+}
+
+.sectioninput{
+  height: 350px;
+  justify-content: flex-start;
+}
+
+.sectionresults{
+  height: 700px;
+}
+
+/* Inputs */
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  margin: 0 0 20 0;
+}
+
+button{
+  background: gray;
+  border-left: white solid 2px;
+  border-top: white solid 2px;
+  border-bottom: white solid 2px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+button:hover, button:active{
+  background-color: mediumaquamarine;
+  color: white;
+}
+
+.input3 .buttons{
+  padding: 10 0 0 0;
+  justify-content: center;
+}
+
+.input3 button{
+  font-size: 24px;
+}
+
+input{
+  background: mediumaquamarine;
+  color: white;
+}
+
+.verticalline {
+  border-left: dotted mediumaquamarine 2px;
+  margin: 50 0 0 0;
+  height: 800px;
+}
+
+/* Results */
+
+.map{
+  height: 300px;
+  width: 300px;
+  background-color: #162129;
+  margin: 0 0 0 50;
+}
+
+.marketlist{
+  height: 300px;
+  width: 300px;
+  background-color: #162129;
+  margin: 0 0 0 50;
+}
