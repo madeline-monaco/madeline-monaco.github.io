@@ -65,6 +65,13 @@ container{
   justify-content: center;
 }
 
+@media (max-width: 900px) {
+  container {
+    width: 90%;
+    display: block;
+  }
+}
+
 .sectioninput, .sectionresults {
   flex-direction: column;
   background: rgba(220,220,220, 0.8);
@@ -131,6 +138,12 @@ input{
   height: 800px;
 }
 
+@media (max-width: 1000px){
+  .verticalline{
+    display: none;
+  }
+}
+
 /* Results */
 
 .map{
@@ -146,3 +159,4 @@ input{
   background-color: #162129;
   margin: 0 0 0 50;
 }
+
