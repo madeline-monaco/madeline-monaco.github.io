@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
     <style>
-            #map {
+        #map {
             height: 400px;
             width: 100%;
-            }
+        }
     </style>
 </head>
 
@@ -28,27 +28,32 @@
             <div class="input1">
                 <h2>Borough
                     <span class=conj>OR </span> Zip Code: </h2>
-                <div class="buttons">
-                    <button id="Manhattan">Manhattan</button>
-                    <button id="Brooklyn">Brooklyn</button>
-                    <button id="Queens">Queens</button>
-                    <button id="Bronx">Bronx</button>
-                    <button id="StatenIsland">Staten Island</button>
-                </div>
+
+                <div class="buttons"></div>
+                <input type="radio" id="Manhattan" name="boroughSelection" value="Manhattan">
+                <label for="Manhattan">Manhattan</label>
+                <input type="radio" id="Brooklyn" name="boroughSelection" value="Brooklyn">
+                <label for="Brooklyn">Brooklyn</label>
+                <input type="radio" id="Queens" name="boroughSelection" value="Queens">
+                <label for="Queens">Queens</label>
+                <input type="radio" id="Bronx" name="boroughSelection" value="Bronx">
+                <label for="Bronx">Bronx</label>
+                <input type="radio" id="StatenIsland" name="boroughSelection" value="Staten Island">
+                <label for="StatenIsland">Staten Island</label>
             </div>
 
             <div class="input2">
                 <form>
-                    <input type="text" name="zipcode" placeholder="Zip Code">
+                    <input class="zip" type="text" name="zipcode" id="zipCodeId" placeholder="Zip Code">
                 </form>
             </div>
 
             <div class="input3">
-                <form action="/action_page.php">
+                <!-- <form action="/action_page.php">
                     <h2>Date:</h2>
                     <input type="date" name="date">
-                </form>
-                <div class="buttons">
+                </form> -->
+                <div id="submit">
                     <button>Submit </button>
                 </div>
             </div>
@@ -60,26 +65,55 @@
 
             <div class="results1">
                 <h2>Open Markets:</h2>
-                <div id="map"> </div>
-            </div>
-            <script>
-                function initMap() {
-                    var nyc = { lat: 40.7128, lng: -74.0060 };
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                        zoom: 10,
-                        center: nyc
-                    });
-                    var marker = new google.maps.Marker({
-                        position: nyc,
-                        map: map
-                    });
-                }
-            </script>
+                <div id="map">
+                    <script>
+                        function initMap() {
 
-            <div class="results2">
-                <h2>Hours, Location, &amp; Info:</h2>
-                <div class="marketlist"> </div>
+                            //Home Map//
+                            var nyc = { lat: 40.733291, lng: -73.956184 };
+                            var map = new google.maps.Map(document.getElementById("map"), {
+                                zoom: 10,
+                                center: nyc
+                            });
 
+                            //Home Marker//
+                            var marker = new google.maps.Marker({
+                                position: nyc,
+                                map: map,
+                                title: "New York City",
+                            })
+                            //Click on Tag//
+                            marker.addListener('click', function () {
+                                infowindow.open(map, marker);
+                            });
+                            //Text for Tag//
+                            var contentString = "<p><b>Market</b>, Address, Times. </p>"
+                            //Tag//
+                            var infowindow = new google.maps.InfoWindow({
+                                content: contentString,
+                                maxWidth: 200
+                            });
+
+                            // //Market Markers//
+                            // var marketLatLong = { lat: aJaxCall("latitude="), lng: aJaxCall("longitude=")};
+                            //  var marker = new google.maps.Marker({
+                            //     position: marketLatLong,
+                            //     map: map
+                            // });
+                            // //Click on Tag//
+                            // marker.addListener('click', function () {
+                            //     infowindow.open(map, marker);
+                            // });
+                            // //Text for Tag//
+                            // var marketDetails = aJaxCall("facilityname="); aJaxCall("facilitystreetname="); aJaxCall("facilitycity=");
+                            // //Tag//
+                            // var infowindow = new google.maps.InfoWindow({
+                            //     content: marketDetails,
+                            //     maxWidth: 200
+                            // });
+                        }
+                    </script>
+                </div>
             </div>
         </section>
 
@@ -91,11 +125,6 @@
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaXozpcTSaCKmsZWXtUDRff-zSkHnNUbk&callback=initMap">
     </script>
-    
-    <!-- <script
-  src="https://data.cityofnewyork.us/resource/cw3p-q2v6.json"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script> -->
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="app.js"></script>

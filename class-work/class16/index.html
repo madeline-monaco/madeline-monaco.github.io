@@ -1,0 +1,123 @@
+<html lang="en">
+
+<head>
+    <title>To Market, To Market</title>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:700,400|Merriweather:700,700italic|Source+Sans+Pro' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+            #map {
+            height: 400px;
+            width: 100%;
+            }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>To Market, To Market</h1>
+        <h4>Your guide to locating NYC farmers markets</h4>
+    </header>
+
+    <container>
+
+        <section class="sectioninput">
+
+            <div class="input1">
+                <h2>Borough
+                    <span class=conj>OR </span> Zip Code: </h2>
+
+
+                <input type="radio" id="Manhattan"
+                       name="boroughSelection" value="Manhattan">
+                <label for="Manhattan">Manhattan</label>
+                <input type="radio" id="Brooklyn"
+                       name="boroughSelection" value="Brooklyn">
+                <label for="Brooklyn">Brooklyn</label>
+                <input type="radio" id="Queens"
+                       name="boroughSelection" value="Queens">
+                <label for="Queens">Queens</label>
+                <input type="radio" id="Bronx"
+                       name="boroughSelection" value="Bronx">
+                <label for="Bronx">Bronx</label>
+                <input type="radio" id="StatenIsland"
+                       name="boroughSelection" value="Staten Island">
+                <label for="StatenIsland">Staten Island</label>
+
+                <!--<div class="buttons">-->
+                    <!--<button id="Manhattan" value = "Manhattan" name = "boroughSelection">Manhattan</button>-->
+                    <!--<button id="Brooklyn" value = "Brooklyn"  name = "boroughSelection">Brooklyn</button>-->
+                    <!--<button id="Queens" value = "Queens"  name = "boroughSelection">Queens</button>-->
+                    <!--<button id="Bronx" value = "Bronx"  name = "boroughSelection">Bronx</button>-->
+                    <!--<button id="StatenIsland" value = "StatenIsland"  name = "boroughSelection">Staten Island</button>-->
+                <!--</div>-->
+            </div>
+
+            <div class="input2">
+                <form>
+                    <input class = "zip" type="text" name="zipcode" id = "zipCodeId" placeholder="Zip Code">
+                </form>
+            </div>
+
+            <div class="input3">
+                <form action="/action_page.php">
+                    <h2>Date:</h2>
+                    <input type="date" name="date">
+                </form>
+                <div id="submit">
+                    <button>Submit </button>
+                </div>
+            </div>
+        </section>
+
+        <div class="verticalline"></div>
+
+        <section class="sectionresults">
+
+            <div class="results1">
+                <h2>Open Markets:</h2>
+                <div id="map"> </div>
+            </div>
+            <script>
+                function initMap() {
+                    var nyc = { lat: 40.7128, lng: -74.0060 };
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 10,
+                        center: nyc
+                    });
+                    <!--var marker = new google.maps.Marker({-->
+                        <!--//position: nyc,-->
+                        <!--map: map-->
+                    <!--});-->
+                }
+            </script>
+
+            <div class="results2">
+                <h2>Hours, Location, &amp; Info:</h2>
+                <div class="marketlist"> </div>
+
+            </div>
+        </section>
+
+    </container>
+
+    <footer>
+        <p>Site by Madeline Monaco. General Assembly 2018.</p>
+    </footer>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaXozpcTSaCKmsZWXtUDRff-zSkHnNUbk&callback=initMap">
+    </script>
+    
+    <!-- <script
+  src="https://data.cityofnewyork.us/resource/cw3p-q2v6.json"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script> -->
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>

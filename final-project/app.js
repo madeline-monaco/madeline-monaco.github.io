@@ -1,53 +1,75 @@
 $(document).ready(function () {
 
-// 1. Select facility city. if it's not selected, use a zip code (make sure it's 5 numbers long)
+    // Selected valid borough OR input a valid zip code
 
-// $("#Manhattan").click(function() {
-//     var manhattan = $("#Manhattan").val();
+    function loadResultSection(boroughSelected, cityZipCode) {
+        if (boroughSelected && cityZipCode) {
+            aJaxCall("facilitycity=" + boroughSelected + "&facilityzipcode=" + cityZipCode);
+        }
+        else if (boroughSelected) {
+            aJaxCall("facilitycity=" + boroughSelected);
+        }
+        else if (cityZipCode) {
+            aJaxCall("facilityzipcode=" + cityZipCode);
+        }
+        //here is where you will probably want to load up results section as well
+    };
 
-// $(".input1").click(function () {
+    // Get variables from API
+    function aJaxCall(variable) {
+        $.ajax({
+            url: "https://data.cityofnewyork.us/resource/cw3p-q2v6.json?" + variable,
+            type: "GET",
+            data: {
+                "$limit": 5000,
+                "$$app_token": "XwT0Lay3rgqSQO1Yt0PZwqopY"
+            }
+        });
+    };
 
-//     var brooklyn = $("#Brooklyn").val();
-//     var queens = $("#Queens").val();
-//     var bronx = $("#Bronx").val();
-//     var statenIsland = $("#StatenIsland").val();
+    // Valid zip code
+    function validateZipCode(zipCode) {
+        if (zipCode.length === 5 && !/\D/.test(zipCode)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
 
-//     $(".input1").click(function(){});
+    // Submit 
+    var submitButton = this.getElementById("submit");
+    submitButton.addEventListener("click", function (event) {
+        //get the zip code selected
+        var cityZipCode = document.getElementById("zipCodeId").value;
+        var validZip = validateZipCode(cityZipCode);
+        var boroughSelected = null;
 
-// 2. Select a date
-
-
-// 2a. If date is not an NY zip code, alert with "Not available in this area"
-
-// 3. Click submit. (Zip OR bourough) AND date
-
-// 4. If zip code, show map of 10 open markets near there.
-
-// 5. If borough, show map of all open markets there.
-
-function getApiCallVal(){
-
-}
-
-var facilityCity = 
-
-var userInput = $('.buttons').val();
-
-$.ajax({
-    url: "https://data.cityofnewyork.us/resource/cw3p-q2v6.json" + facilityCity,
-    type: "GET",
-    data: {
-      "$limit" : 5000,
-      "$$app_token" : "XwT0Lay3rgqSQO1Yt0PZwqopY"      
-    }
-}).done(function(data) {
-    var zip = data.data;
-    zip.forEach(function(zip){
-    var memeURL = meme.images.looping.mp4;
-$('.video-wrapper').append('<video src="' + memeURL + '"autoplay></video>');
-});
-
-
-$("")
-
+        //get the borough selected
+        var boroughButtons = document.getElementsByName("boroughSelection");
+        boroughButtons.forEach(function (btn) {
+            //if this is the selected borough
+            if (btn.checked) {
+                boroughSelected = btn.id;
+            }
+        });
+            // Checks borough and zip
+            if (!boroughSelected && !validZip) {
+                alert("Please Select a Borough or Enter a Valid 5 digit zip code");
+            }
+            else if (!boroughSelected) {
+                if (cityZipCode !== "") {
+                    if (validZip) {
+                        loadResultSection(boroughSelected, cityZipCode);
+                    }
+                    else {
+                        alert("Please Enter a Valid 5 digit zip code");
+                    }
+                }
+            }
+            //pass in borough (if one is selected) and zip code (if one is entered)
+            else {
+                loadResultSection(boroughSelected, cityZipCode);
+                }
+    });
 });

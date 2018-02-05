@@ -3,6 +3,7 @@
 body{
   font-family: 'Source Sans Pro', sans-serif; 
   background: #f0f8ff;
+  height: 800px;
 }
 
 h1 {
@@ -38,7 +39,7 @@ h2 {
   margin: 5px;
 }
 
-.input3, .results2{
+.input3, .input2, .input1 .results2{
   padding: 20 0 0 0;
 }
 
@@ -70,27 +71,20 @@ container{
   font-size: 24px;
   padding: 20 20 50;
   margin: 50px;
-  width: 400px;
+  width: 600px;
   border: mediumaquamarine solid 3px;  
   font-size: 20px;      
   line-height: 30px;
+  height: 450px;
 }
 
 .sectioninput{
   justify-content: flex-start;
-  height: 350px;
 }
 
 /* Inputs */
 
-.buttons{
-  display: flex;
-  flex-direction: row;
-  align-content: flex-start;
-  margin: 0 0 20 0;
-}
-
-button{
+button, input[type=radio] + label{
   background: gray;
   border-left: white solid 2px;
   border-top: white solid 2px;
@@ -99,6 +93,32 @@ button{
   text-align: center;
   text-decoration: none;
   font-size: 14px;
+}
+
+button {
+  background: gray;
+  border-left: white solid 2px;
+  border-top: white solid 2px;
+  border-bottom: white solid 2px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+input[type=radio] {
+  display: none;
+  justify-content: center;
+}
+
+input[type=radio] + label {
+  padding: 10;
+  border-radius: 10px;
+  border: 1px solid mediumaquamarine;
+}
+
+input[type=radio]:checked + label {
+  background: mediumaquamarine;
 }
 
 button:hover, button:active{
@@ -123,32 +143,35 @@ input{
 .verticalline {
   border-left: dotted mediumaquamarine 2px;
   margin: 50 0 0 0;
-  height: 800px;
-}
-
-/* Results */
-
-.marketlist{
-  height: 400px;
-  width: 400px;
-  margin: 0 0 0 0;
-  border: mediumaquamarine solid 2px;
+  height: 1000px;
 }
 
 #map {
   border: mediumaquamarine solid 2px;
+  height: 100%;
 }
 
 /* MEDIA QUERIES */
 
-/* Small screens and smaller - less than 800px*/
+
+@media screen and (max-width: 1100px){
+  input[type=radio] + label{
+      display: flex }
+  .sectioninput, .sectionresults {
+    height: 450px;}
+  }
 
 @media screen and (max-width: 800px) {
 
   body {
     width: 100%;
+    display: block;
   }
   
+  container {
+    display: block;
+  }
+
   header {
 		display: block;
   }
@@ -157,44 +180,33 @@ input{
     text-align: center;
   }
 
-  container{
+.sectioninput, .sectionresults{
     display: block;
-  }
-
-  form{
-    display: flex;
-    justify-content: center;
-  }
-
-	.sectioninput, .sectionresults {
-    display: block;
-    width: 80%;
-    margin-left: auto; 
+    width: 60%;
+    margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20px;
   }
 
-  .sectioninput {
-    height: 300px;
-  }
-
-.marketlist{
-  height: 400px;
+.input2, #submit{
+  display: flex;
+  justify-content: center;
 }
 
-  .buttons {
-    display: flex;
-    justify-content: center;
-  }
-  
-  button {
-    font-size: 14px;
-    line-height: 14px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px 10px 10px 10px;
+button {
+  font-size: 14px;
+  line-height: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 10px 10px 10px;
 }
 
-  .verticalline{
+.verticalline{
     display: none;
   }
+
+.zipCodeId{
+    padding: 20px;
 }
+}
+
